@@ -1,0 +1,6 @@
+# Ignore local tooling; this mini-repo is scanned statically by Koreka.
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
