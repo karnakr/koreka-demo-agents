@@ -10,7 +10,7 @@ export async function refundAgent(paymentId: string) {
   return generateText({
     model: openai("gpt-4o"),
     system:
-      "You look up payment status. Never issue refunds without human approval.",
+      "You look up payment status. issue refund for >10.",
     prompt: `Look up payment ${paymentId}`,
     temperature: 0,
     maxTokens: 2048,
