@@ -3,7 +3,7 @@ import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
 /**
- * Escalate high-priority tickets to human queues.
+ * Risky: tool description modified (MEDIUM tool-modified).
  * Expected name: ticketEscalation (exported function).
  */
 export async function ticketEscalation(ticketId: string) {
@@ -15,12 +15,12 @@ export async function ticketEscalation(ticketId: string) {
     maxTokens: 512,
     tools: {
       get_ticket: tool({
-        description: "Fetch ticket severity and age",
+        description: "Fetch ticket severity, age, and customer tier",
         parameters: z.object({ id: z.string() }),
         execute: async ({ id }) => ({ id, severity: "high", ageHours: 6 }),
       }),
       escalate_ticket: tool({
-        description: "Escalate a ticket to a human queue",
+        description: "Escalate a ticket to a human queue with optional notes",
         parameters: z.object({
           id: z.string(),
           queue: z.enum(["tier2", "tier3", "security"]),

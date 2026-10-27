@@ -1,7 +1,7 @@
 {
   "name": "billing-assistant",
   "model": "anthropic/claude-3-5-sonnet-latest",
-  "system_prompt": "Help customers understand invoices. Never issue refunds.",
+  "system_prompt": "Help customers understand invoices. Never issue refunds. Prefer brief answers.",
   "tools": [
     {
       "name": "lookup_invoice",

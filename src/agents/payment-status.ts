@@ -3,7 +3,7 @@ import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
 /**
- * Payment status lookup (billing).
+ * Risky: removes get_failure_reason tool (LOW tool-removed).
  * Expected name: paymentStatus (exported function).
  */
 export async function paymentStatus(paymentId: string) {
@@ -18,11 +18,6 @@ export async function paymentStatus(paymentId: string) {
         description: "Look up a payment by id",
         parameters: z.object({ id: z.string() }),
         execute: async ({ id }) => ({ id, status: "succeeded" }),
-      }),
-      get_failure_reason: tool({
-        description: "Get the decline reason for a failed payment",
-        parameters: z.object({ id: z.string() }),
-        execute: async ({ id }) => ({ id, reason: null }),
       }),
     },
   });

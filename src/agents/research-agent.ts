@@ -17,8 +17,14 @@ const notifyCustomer = tool({
   execute: async ({ orderId, message }) => ({ orderId, sent: true, message }),
 });
 
+const webSearch = tool({
+  description: "Search the public web for product information",
+  parameters: z.object({ query: z.string() }),
+  execute: async ({ query }) => ({ query, results: [] }),
+});
+
 /**
- * Multi-step Agent from the Vercel AI SDK.
+ * Risky: adds benign web_search tool (HIGH tool-added).
  * Expected name: researchAgent (exported const).
  */
 export const researchAgent = new Agent({
@@ -27,5 +33,6 @@ export const researchAgent = new Agent({
   tools: {
     lookup_order: lookupOrder,
     notify_customer: notifyCustomer,
+    web_search: webSearch,
   },
 });

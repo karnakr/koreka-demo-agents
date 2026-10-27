@@ -3,12 +3,12 @@ import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
 
 /**
- * Support triage agent via generateText + tools.
+ * Risky: model upgraded gpt-4o-mini → gpt-4o (HIGH model-changed).
  * Expected name: supportTriage (exported function).
  */
 export async function supportTriage(ticketId: string) {
   return generateText({
-    model: openai("gpt-4o-mini"),
+    model: openai("gpt-4o"),
     system:
       "You triage inbound support tickets and route them to the right queue.",
     prompt: `Triage ticket ${ticketId}`,

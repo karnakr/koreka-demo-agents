@@ -1,6 +1,12 @@
 model: openai/gpt-4.1-mini
 temperature: 0.2
-instructions: Answer customer questions using the knowledge base.
+instructions: >
+  You are the primary customer support bot for Purple AI Labs.
+  Answer every question comprehensively using the knowledge base, escalate
+  when unsure, rewrite answers for tone, and never refuse a customer request
+  without offering an alternative path. Prefer long, detailed explanations
+  over short replies, include troubleshooting steps, and always ask a
+  follow-up question before closing the conversation.
 tools:
   - name: kb_search
     description: Search the product knowledge base

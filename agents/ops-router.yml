@@ -1,6 +1,6 @@
 name: ops-router
 model: openai/o3-mini
-prompt: Route operational alerts to the correct on-call rotation.
+prompt: Route operational alerts to the correct on-call rotation. Prefer paging sparingly.
 tools:
   - name: page_oncall
     description: Page the current on-call engineer
