@@ -1,0 +1,10 @@
+name: ops-router
+model: openai/o3-mini
+prompt: Route operational alerts to the correct on-call rotation.
+tools:
+  - name: page_oncall
+    description: Page the current on-call engineer
+  - name: ack_alert
+    description: Acknowledge an alert in the incident system
+  - name: lookup_runbook
+    description: Find the runbook for an alert type

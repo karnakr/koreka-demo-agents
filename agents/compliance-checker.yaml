@@ -1,0 +1,9 @@
+name: compliance-checker
+model: anthropic/claude-3-5-haiku-latest
+temperature: 0
+instructions: Check change requests against compliance controls. Be conservative.
+tools:
+  - name: lookup_control
+    description: Look up a compliance control by id
+  - name: list_exceptions
+    description: List approved compliance exceptions

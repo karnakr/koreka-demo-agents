@@ -1,0 +1,15 @@
+{
+  "name": "billing-assistant",
+  "model": "anthropic/claude-3-5-sonnet-latest",
+  "system_prompt": "Help customers understand invoices. Never issue refunds.",
+  "tools": [
+    {
+      "name": "lookup_invoice",
+      "description": "Fetch an invoice by id"
+    },
+    {
+      "name": "list_charges",
+      "description": "List charges for a customer"
+    }
+  ]
+}

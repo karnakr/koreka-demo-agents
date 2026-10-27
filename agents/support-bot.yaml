@@ -1,0 +1,6 @@
+model: openai/gpt-4.1-mini
+temperature: 0.2
+instructions: Answer customer questions using the knowledge base.
+tools:
+  - name: kb_search
+    description: Search the product knowledge base
